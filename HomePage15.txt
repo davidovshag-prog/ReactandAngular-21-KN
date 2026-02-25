@@ -1,3 +1,9 @@
+Зробити, щоб після натиску кнопки стоврити
+у списку авто появлялося дане авто.
+При цьому поля форми мають очищатися.
+Успіхів Вам і позитивчику. 
+
+
 import type {ICreateCar} from "../../types/ICreateCar.ts";
 import {Button, Form, type FormProps, Input} from "antd";
 
