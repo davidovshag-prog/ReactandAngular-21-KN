@@ -1,12 +1,20 @@
 import type {ICreateCar} from "../../types/ICreateCar.ts";
 import {Button, Form, type FormProps, Input} from "antd";
 
-const CreateCarItem = () => {
+interface Props {
+    onCreate: (car: ICreateCar) => void;
+}
+
+const CreateCarItem = ({ onCreate }: Props) => {
 
     const [form] = Form.useForm<ICreateCar>();
 
     const onHandlerSubmit = (values: ICreateCar) => {
         console.log("Submit form", values);
+        // викликаємо callback функцію з дочірнього компонента
+        onCreate(values);
+        // очищаэмо форму
+        form.resetFields();
     }
 
     const formItemLayout: FormProps = {
@@ -30,14 +38,6 @@ const CreateCarItem = () => {
                       layout={"horizontal"}
                 >
                     <div className="grid grid-cols-3 gap-2">
-                        <Form.Item<ICreateCar>
-                            label={"Id"}
-                            name={"id"}
-                            rules={[{required: true, message: "Вкажіть id"}]}
-                        >
-                            <Input/>
-                        </Form.Item>
-
                         <Form.Item<ICreateCar>
                             label={"Марка"}
                             name={"mark"}
