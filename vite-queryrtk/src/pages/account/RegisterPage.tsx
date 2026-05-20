@@ -101,7 +101,6 @@ const RegisterPage = () => {
 
 
                     <MyButton text={"Реєстрація"}/>
-                    <MyLink text={"Вхід"} to={"/login"}/>
                 </form>
             </div>
         </>
