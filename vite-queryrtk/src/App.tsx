@@ -9,6 +9,7 @@ import ForgotPasswordPage from "./pages/account/ForgotPasswordPage.tsx";
 import ForgotPasswordSuccessPage from "./pages/account/ForgotPasswordSuccessPage.tsx";
 import ResetPasswordPage from "./pages/account/ResetPasswordPage.tsx";
 import Layout from "./layout";
+import CreateMoviePage from "./pages/movies/CreateMoviePage.tsx";
 
 function App() {
 
@@ -25,6 +26,10 @@ function App() {
                     <Route path={"forgot-password-success"} element={<ForgotPasswordSuccessPage/>}/>
                     <Route path={"reset-password"} element={<ResetPasswordPage/>}/>
                     <Route path={"login"} element={<LoginPage/>}/>
+                    <Route path={"movies"}>
+                        <Route path={"create"} element={<CreateMoviePage/>}/>
+                    </Route>
+
                 </Route>
             </Routes>
         </>
